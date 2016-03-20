@@ -1,0 +1,6 @@
+[package]
+name = "ntpie"
+version = "0.1.0"
+authors = ["Josh Driver <keeperofdakeys@gmail.com>"]
+
+[dependencies]
