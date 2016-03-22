@@ -2,52 +2,58 @@ use std::net::IpAddr;
 
 // FIXME: Work out what this type actually is.
 /// NTP Short Format
-type TDist = u32;
+pub type TDist = u32;
 // FIXME: Should this be a generic date value?
 /// NTP Timestamp Format
-type TStamp = u64;
+pub type TStamp = u64;
 // FIXME: Should this be a generic md5 type (if it exists)?
 /// MD5 Digest
-type Digest = u8;
+pub type Digest = u8;
 
 /// An NTP Packet.
-struct Packet {
+pub struct Packet {
   /// Source IP Address
-  srcaddr: IpAddr,
+  pub srcaddr: IpAddr,
   /// Destination IP Address
-  dstaddr: IpAddr,
+  pub dstaddr: IpAddr,
   /// Version Number
-  version: u8,
+  pub version: u8,
   /// Leap Indicator
-  leap: u8,
+  pub leap: u8,
   /// Mode
-  mode: u8,
+  pub mode: u8,
   /// Stratum
-  stratum: u8,
+  pub stratum: u8,
   /// Poll Interval
-  poll: u8,
+  pub poll: u8,
   // FIXME: This is a log(2) value, might need to be a tuplestruct.
   /// Precision
-  precision: i8,
+  pub precision: i8,
   /// Root Delay
-  rootdelay: TDist,
+  pub rootdelay: TDist,
   /// Root Dispersion
-  rootdisp: TDist,
+  pub rootdisp: TDist,
   /// Reference ID
-  refid: u8,
+  pub refid: u8,
   /// Reference Time
-  reftime: TStamp,
+  pub reftime: TStamp,
   /// Origin Timestamp
-  org: TStamp,
+  pub org: TStamp,
   /// Receive Timestamp
-  rec: TStamp,
+  pub rec: TStamp,
   /// Transmit Timestamp
-  xmt: TStamp,
+  pub xmt: TStamp,
   // FIXME: These might need to be optional.
   /// Key ID
-  keyid: u32,
+  pub keyid: u32,
   /// Message Digest (MD5)
-  mac: Digest,
+  pub mac: Digest,
   /// Destination Timestamp
-  dst: Option<TStamp>,
+  pub dst: Option<TStamp>,
+}
+
+impl Packet {
+  pub fn from_bytes(&[u8]) -> Result<Self, ()> {
+    Err(())
+  }
 }

@@ -1,6 +1,17 @@
 [package]
 name = "ntpie"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["Josh Driver <keeperofdakeys@gmail.com>"]
+description = "NTP tools written in rust"
+repository = "https://github.com/keeperofdakeys/ntpie"
+readme = "README.md"
 
 [dependencies]
+
+[[bin]]
+name="ntpie"
+path="src/ntpie/main.rs"
+
+[lib]
+name="libntpie"
+path="src/libntpie/lib.rs"
