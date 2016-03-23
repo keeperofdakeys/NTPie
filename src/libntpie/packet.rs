@@ -53,7 +53,7 @@ pub struct Packet {
 }
 
 impl Packet {
-  pub fn from_bytes(&[u8]) -> Result<Self, ()> {
+  pub fn from_bytes(bytes: &[u8]) -> Result<Self, ()> {
     Err(())
   }
 }
