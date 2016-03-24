@@ -8,6 +8,9 @@ readme = "README.md"
 
 [dependencies]
 # resolve = "0.0.1"
+# dns-lookup = { path = "../dns-lookup" }
+dns-lookup = "0.1.0"
+libc = "0.2.8"
 
 [[bin]]
 name="ntpie"
